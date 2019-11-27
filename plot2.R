@@ -1,7 +1,7 @@
 #
 # EXPLORATORY DATA ANALYSIS
 #
-# PLOT 1 : GLOBAL ACTIVE POWER
+# PLOT 2 : GLOBAL ACTIVE POWER
 #
 
 #  Project_folder (UCI_EPC)     -> working directory      
@@ -55,11 +55,16 @@ tbl_epc <- tbl_epc %>% mutate(Global_active_power=as.numeric(Global_active_power
                               )
 
 
-png("Plot1.png", width = 480, height = 480)
 
-#
-# Display histogram 
-hist(tbl_epc$Global_active_power,col = "red",main="Global Active Power",xlab = "Global Active Power (kilowatts)")
+# PLOT
+png("Plot2.png", width = 480, height = 480)
 
-#dev.copy(png, file = "Plot1.png")  ## Copy my plot to a PNG file
+plot(tbl_epc$fulldatetime,tbl_epc$Global_active_power,type="l",ylab = "Global Active Power (kilowatts)",xlab="")
+
 dev.off()  ## Don't forget to close the PNG device!
+
+
+#END OF THE FILE
+
+
+
